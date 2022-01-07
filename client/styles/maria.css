@@ -1,0 +1,328 @@
+/* CSS declarations go here */
+
+/*
+  Blue -- #0088CC; rgb(0, 136, 204);
+  Green -- #51A351; rgb(81, 163, 81);
+*/
+
+body {
+    background-color: #fff;
+    color: #333333;
+    font: 12px/18px  Helvetica, Lucida Grande, Geneva, Arial, Verdana, sans-serif, Myriad Pro;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+i {
+  color: #fff;
+}
+
+.icon-red {
+  color: #d45252;
+}
+
+.icon-black {
+  color: #000;
+  padding: 3px;
+}
+
+.icon-green {
+  color: #52d452;
+}
+
+#background {
+  background: url("/img/page_bg.png") no-repeat scroll center 40px #75495C;
+}
+
+#background-blue {
+  background: url("/img/page_bg_blue.jpg") no-repeat #103352;
+  z-index: -1;
+}
+
+.clearfix:after {
+    clear: both;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    width: 0;
+}
+
+
+.eventlist {
+  padding: 0px;
+  margin: 0px;
+}
+
+.navbar-brand {
+    float: left;
+    font-size: 18px;
+    padding: 3px 0px 5px 32px;
+}
+
+.toplogo {
+  background: url("/img/maria-logo-grey.svg") no-repeat;
+  background-size: 28px 22px;
+  margin: 10px 5px;
+}
+
+.toplogo:hover {
+  background: url("/img/maria-logo-white.svg") no-repeat;
+  background-size: 28px 22px;
+  margin: 10px 5px;
+}
+
+.navbar-nav {
+  padding-left: 20px;
+}
+
+.bottomlogo {
+  background: url("/img/maria-logo-grey.svg") no-repeat;
+  background-size: 38px 28px;
+  height: 50px;
+  width: 100px;
+  padding: 30px;
+}
+
+.bottomlogo:hover {
+  background: url("/img/maria-logo.svg") no-repeat;
+  background-size: 38px 28px;
+}
+
+.navbar {
+  margin-bottom: 2px;
+}
+
+.navbar .brand {
+  padding: 7px 100px 6px 44px;
+  margin: 6px 0px 0px 0px;
+}
+
+small {
+  font-size: 80%;
+}
+
+.aptlist {
+    cursor: pointer;
+    padding: 16px;
+    margin: 10px 0px;
+    height: 80px;
+    border-radius: 4px 4px 4px 4px;
+    border: solid 1px #ccc;
+}
+
+.aptlist:hover {
+    cursor: pointer;
+    background-color: #eee;
+    box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.3);
+}
+
+.aptlist.selected {
+    background-color: #eee;
+    box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.3);
+}
+
+.aptlist .title {
+	  float: left;
+    width:100%;
+    clear: both;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.aptlist .location {
+	  float: left;
+    width:100%;
+    display: block;
+    font-size: 0.8em;
+    color: #777;
+}
+
+.aptlist .actions {
+    display: block;
+    width: 20px;
+    font-size: 1.0em;
+    float: left;
+}
+
+.right-fix {
+  padding-right: 60px;
+}
+
+.aptlist.selected .location {
+    color: black;
+}
+
+.appointmentdetail .location {
+  font-size: 1.2em;
+  display: block;
+  clear: both;
+  margin: 5px 0px 20px;
+}
+
+#proposalDate, #proposalTime {
+  width: 140px;
+}
+
+/* Custom container */
+.container {
+  margin: 0 auto;
+}
+
+.homepage {
+  background: #fff;
+  z-index: 5;
+  margin-top: 70px;
+}
+
+.container .jumbotron {
+  padding-top: 50px;
+}
+
+.container > hr {
+  margin: 60px 0;
+}
+
+.timepropitem {
+  line-height: 30px;
+}
+/* Main marketing message and sign up button */
+.jumbotron {
+  margin: 40px 0;
+  text-align: center;
+}
+.jumbotron h1 {
+  font-size: 100px;
+  line-height: 1;
+}
+
+.jumbotron p {
+  max-width: 960px;
+  margin: 30px auto;
+}
+
+
+.jumbotron .lead {
+  font-size: 24px;
+  line-height: 1.25;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 60px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+.footer {
+	text-align: center;
+	margin: 100px 0px;
+	padding: 60px 0px;
+	border-top: solid #ddd 1px;
+}
+
+.piechart {
+  min-width: 300px; 
+  min-height: 300px; 
+  margin: 0 auto;
+}
+
+.homebox h3, .homeboxclean h3 {
+  font-size: 190%;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.homebox p, .homeboxclean h3 {
+  margin: 16px 0px;
+}
+
+.homeboxclean .svgwrap {
+  width: 100%;
+  text-align: center;
+  padding: 0 0 20px 0;
+  margin: auto;
+}
+
+.homeboxclean .svgwrap img {
+  height: 100px;
+}
+
+.homebox a { display:block; cursor:pointer;
+	background:#f6f6f6;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(249,249,249,1)), color-stop(100%, rgba(240,240,240,1)));
+	background:-webkit-linear-gradient(top, rgba(249,249,249,1) 50%, rgba(240,240,240,1) 100%);
+	background:   -moz-linear-gradient(top, rgba(249,249,249,1) 50%, rgba(240,240,240,1) 100%);
+	background:    -ms-linear-gradient(top, rgba(249,249,249,1) 50%, rgba(240,240,240,1) 100%);
+	background:     -o-linear-gradient(top, rgba(249,249,249,1) 50%, rgba(240,240,240,1) 100%);
+	background:        linear-gradient(top, rgba(249,249,249,1) 50%, rgba(240,240,240,1) 100%);
+	-webkit-border-radius:5px;
+	   -moz-border-radius:5px;
+	        border-radius:5px;
+	-webkit-box-shadow:0 -3px 1px rgba(255,255,255,.6), inset 0 2px 1px rgba(255,255,255,.97), 0 0 3px -1px rgba(0,0,0,.7);
+	   -moz-box-shadow:0 -3px 1px rgba(255,255,255,.6), inset 0 2px 1px rgba(255,255,255,.97), 0 0 3px -1px rgba(0,0,0,.7);
+	        box-shadow:0 -3px 1px rgba(255,255,255,.6), inset 0 2px 1px rgba(255,255,255,.97), 0 0 3px -1px rgba(0,0,0,.7);
+}
+
+.homebox a:nth-child(1n) { border-color:#fff; }
+
+.homebox a:hover {
+	background:#f0f0f0;
+	background:-webkit-gradient(linear,left top, left bottom, color-stop(50%, rgba(249,249,249,1)), color-stop(100%, rgba(224,224,224,1)));
+	background:-webkit-linear-gradient(top, rgba(249,249,249,1) 50%, rgba(224,224,224,1) 100%);
+	background:   -moz-linear-gradient(top, rgba(249,249,249,1) 50%, rgba(224,224,224,1) 100%);
+	background:    -ms-linear-gradient(top, rgba(249,249,249,1) 50%, rgba(224,224,224,1) 100%);
+	background:     -o-linear-gradient(top, rgba(249,249,249,1) 50%, rgba(224,224,224,1) 100%);
+	background:        linear-gradient(top, rgba(249,249,249,1) 50%, rgba(224,224,224,1) 100%);
+}
+
+.homebox .curve-down { display:inline-block; height:115px; width:100%; _display:inline; _zoom:1; border:1px solid #e0e0e0; border-top-color:#efefef; border-bottom-color:#ccc; }
+
+.homebox .curve-down:nth-child(1n) { border:none;
+	-webkit-border-radius:100% / 33px;
+	   -moz-border-radius:100% / 33px;
+	        border-radius:100% / 33px;
+    -webkit-box-shadow:0 8px 3px -5px rgba(0,0,0,.2);
+       -moz-box-shadow:0 8px 3px -5px rgba(0,0,0,.2);
+            box-shadow:0 8px 3px -5px rgba(0,0,0,.2);
+}
+
+.homebox a img { display:block;
+	-webkit-border-radius:5px;
+	   -moz-border-radius:5px;
+	        border-radius:5px;
+}
+
+.topdrop {
+  padding-top: 70px;
+}
+
+.lovegrid .item {
+  color: #000;
+  overflow: hidden;
+}
+
+.linkhome {
+  cursor: pointer;
+}
+
+#btnAddAttendee {
+  -moz-user-select: none;
+  background-image: none;
+  border: 1px solid rgba(0, 0, 0, 0);
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 0;
+  padding: 2px 20px;
+  line-height: 1.9;
+  vertical-align: top;
+}

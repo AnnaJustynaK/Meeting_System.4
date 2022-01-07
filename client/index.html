@@ -1,0 +1,307 @@
+<head>
+	<title>Maria: Simple Event Scheduling</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="index, follow" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="cache-control" content="max-age=0" />
+	<meta http-equiv="expires" content="-1" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta name="keywords" content="maria, meeting scheduler, meeting scheduling, meeting, plan a meeting, time-zone, meeting, organizer, scheduling, schedule, agenda, timetable, calendar, appointment, date, coordinate, poll, meet, lunch, dinner, workshop, team, weekend, event, invitation, online" />
+	<meta name="description" content="Maria is your meeting assistant for for scheduling meetings, events and  appointments. Maria is smart, quick, and free. Simply set up a poll, send a link to all invitees, watch progress online, and finally choose the most suitable date." />
+	<meta name="copyright" content="Company, Inc." />
+	<meta name="application-name" content="Maria" />
+</head>
+
+<body>
+  {{renderPage}}
+</body>
+   
+<template name="homepage">
+  
+  {{#if showCreateDialog }}
+    {{> createDialog }}
+	{{/if}}
+
+  {{#if showUpdateAppointmentDialog }}
+    <h3>Showing Update Appointment Dialog</h3>
+    {{> updateAppointmentDialog }}
+	{{/if}}
+
+  {{#if showTimeProposalsDialog }}
+    {{> timeProposalsDialog }}
+	{{/if}}
+  
+  {{#if showAttendeesDialog }}
+    {{> attendeesDialog }}
+  {{/if}}
+  
+	{{> header }}
+  
+  <div class="container homepage">
+    {{#if isuser}}  
+      {{> dashboard }}
+    {{/if }}
+    
+    {{#unless isuser}}
+      {{> landing}}
+    {{/unless }}
+  </div>
+    
+  {{> footer }}
+</template>
+
+<template name="header">
+  
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand toplogo" href="/">Maria</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/why">Why Maria?</a></li>
+          <li><a href="/tour">Tour</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/signup">Sign Up Free</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          {{ loginButtons }}
+        </ul>
+      </div>
+    </div> 
+  </div>
+
+
+  <div id="background-blue">       
+    {{#unless isuser}}
+      {{>homenavigation }}
+    {{/unless }}
+  </div>
+  
+    <div class="wizardPane">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="wizardPaneStep">
+            {{> homewizzero}}
+            {{> homewizone}}
+            {{> homewiztwo}}
+            {{> homewizthree}}
+            {{> homewizfour}}
+            {{> homewizfive}}
+            {{> homewizsix}}
+          </div>
+       </div>
+       <div class="col-md-3"></div>
+     </div>
+   </div>
+</template>
+
+<template name="homenavigation">
+  <div class="container clearfix" id="homenavigation">
+     <div class="row">
+       <div class="ca-menu">
+         <ul>
+           <li id="lione">
+             <a href="#" class="linkhome" id="one">
+               <span class="ca-icon">?</span>
+               <div class="ca-content">
+                 <h2 class="ca-main">Create an Event</h2>
+                 <h3 class="ca-sub">Personalized to your needs</h3>
+               </div>
+             </a>
+           </li>
+           
+           <li id="litwo">
+             <a href="#" class="linkhome" id="two">
+               <span class="ca-icon">P</span>
+               <div class="ca-content">
+                 <h2 class="ca-main">Add Time Proposals</h2>
+                 <h3 class="ca-sub">Advanced use of technology</h3>
+               </div>
+             </a>
+           </li>
+           
+           <li id="lithree">
+             <a href="#" class="linkhome" id="three">
+               <span class="ca-icon">U</span>
+               <div class="ca-content">
+                 <h2 class="ca-main">Add Attendees</h2>
+                 <h3 class="ca-sub">Professionals in action</h3>
+               </div>
+             </a>
+           </li>
+           
+           <li id="lifour">
+             <a href="#" class="linkhome" id="four">
+               <span class="ca-icon">@</span>
+               <div class="ca-content">
+                 <h2 class="ca-main">Send Invitations</h2>
+                 <h3 class="ca-sub">24/7 for you needs</h3>
+               </div>
+             </a>
+           </li>
+           
+           <li id="lifive">
+             <a href="#" class="linkhome" id="five">
+               <span class="ca-icon">u</span>
+               <div class="ca-content">
+                 <h2 class="ca-main">Track Progress</h2>
+                 <h3 class="ca-sub">24/7 for you needs</h3>
+               </div>
+             </a>
+          </li>
+          
+          <li id="lisix">
+            <a href="#" class="linkhome" id="six">
+              <span class="ca-icon">N</span>
+              <div class="ca-content">
+                <h2 class="ca-main">Pick a Winner</h2>
+                <h3 class="ca-sub">24/7 for you needs</h3>
+              </div>
+            </a>
+         </li>
+         
+       </ul>
+       
+     </div>
+   </div>
+ </div><!-- /homenavigation -->
+</template>
+
+<template name="footer">
+  <div class="footer">
+    <div class="row">
+      <div class="col-md-12"><a class="bottomlogo" href="/" title="Home"/>
+        <p>&copy; Maria Meeting Scheduling, LLC. 2013</p>
+        <p>Last deployed: {{lastdeployed}}</p>
+        <p>Revision: {{revision}}</p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="newappointment">
+  <form class="well form-search">
+    <div class="row">
+      <div class="col-md-4">
+        <input type="text" id="title" class="form-control" placeholder="Event title">
+      </div>
+      <div class="col-md-6">
+        <input type="text" id="location" class="form-control" placeholder="Location (e.g. 1600 American Dream Way, Reston, VA 20122)">
+      </div>
+      <div class="col-md-2">
+        <button id="btnAddEvent" type="button" class="btn btn-primary">Add Event</button>
+      </div>
+    </div>
+  </form>	
+</template>
+
+<template name="landing">
+  <div class="container">
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+    <h1>Simple events!</h1>
+    <p class="lead">Maria helps you organize better events by drastically reducing the time to design the event, create a schedule and track attendance. Maria is fast and easy to use. Best of all, it's FREE.</p>
+    <a class="btn btn-large btn-success linkhome" href="#" id="one">Get started today</a>
+  </div>
+
+ 
+    <center><h2 class="itemh2">What's on your mind? Maria can help you organize the perfect event.</h2><center>
+    
+    
+    <ul class="ch-grid lovegrid linkhome">
+		  
+			<li class="item">
+				<div class="ch-item ch-img-blue">
+					<div class="ch-info">
+						<h3>Sales Meetings</h3>
+						<p>The easy way to close big deals.</p>
+					</div>
+				</div>
+			</li>
+
+      <li class="item">
+        <div class="ch-item ch-img-green">
+          <div class="ch-info">
+            <h3>Fundraising Events</h3>
+            <p>Increase attendence and collect more donations.</p>
+          </div>
+        </div>
+      </li>
+			
+			<li class="item">
+				<div class="ch-item ch-img-lime-green">
+					<div class="ch-info">
+						<h3>Job Interviews</h3>
+						<p>A quick and easy way to recruit a rock star.</p>
+					</div>
+				</div>
+			</li>
+			
+			<li class="item">
+				<div class="ch-item ch-img-purple">
+					<div class="ch-info">
+						<h3>Team Building</h3>
+						<p>Get to know your employees and coworkers.</p>
+					</div>
+				</div>
+			</li>
+
+			<li class="item">
+				<div class="ch-item ch-img-red">
+					<div class="ch-info">
+						<h3>Conference Calls</h3>
+						<p>Quick and stress-free conference calls.</p>
+					</div>
+				</div>
+			</li>
+
+			<li class="item">
+				<div class="ch-item ch-img-red">
+					<div class="ch-info">
+						<h3>Training Sessions</h3>
+						<p>Onsite and offsite training made easy.</p>
+					</div>
+				</div>
+			</li>
+
+      <li class="item">
+        <div class="ch-item ch-img-purple">
+          <div class="ch-info">
+            <h3>Sports Activities</h3>
+            <p>Easy event management for your sports league.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="item">
+        <div class="ch-item ch-img-lime-green">
+          <div class="ch-info">
+            <h3>Non-Profit Events</h3>
+            <p>Simple tools for successful non-profit events.</p>
+          </div>
+        </div>
+      </li>
+			
+      <li class="item">
+        <div class="ch-item ch-img-green">
+          <div class="ch-info">
+            <h3>Social Gatherings</h3>
+            <p>Share great moments with friends and family.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="item">
+        <div class="ch-item ch-img-blue">
+          <div class="ch-info">
+            <h3>Surprise Birthdays</h3>
+            <p>A most secret way to surprise your boss.</p>
+          </div>
+        </div>
+      </li>
+		</ul>
+    
+</template>
